@@ -4,426 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Me Deve!</title>
-    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Supabase JS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Google Fonts Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
-    <!-- Tailwind compilado (estático, sem CDN) -->
-    <style id="tw-compiled">
-*,::before,::after{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}
-::before,::after{--tw-content:''}
-html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
-body{margin:0;line-height:inherit}
-h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;margin:0}
-p{margin:0}
-a{color:inherit;text-decoration:inherit}
-button,input,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}
-button,select{text-transform:none}
-button,[type=button]{-webkit-appearance:button;background-color:transparent;background-image:none;cursor:pointer}
-:disabled{cursor:default}
-ul,ol{list-style:none;margin:0;padding:0}
-input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
-*{--tw-ring-inset:;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-gradient-from-position:;--tw-gradient-via-position:;--tw-gradient-to-position:}
-
-.block{display:block}
-.flex{display:flex}
-.grid{display:grid}
-.hidden{display:none}
-.relative{position:relative}
-.absolute{position:absolute}
-.fixed{position:fixed}
-.sticky{position:sticky}
-.flex-col{flex-direction:column}
-.flex-wrap{flex-wrap:wrap}
-.flex-1{flex:1 1 0%}
-.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.items-center{align-items:center}
-.items-start{align-items:flex-start}
-.items-end{align-items:flex-end}
-.justify-between{justify-content:space-between}
-.justify-center{justify-content:center}
-.text-center{text-align:center}
-.text-right{text-align:right}
-.font-semibold{font-weight:600}
-.font-bold{font-weight:700}
-.font-black{font-weight:900}
-.uppercase{text-transform:uppercase}
-.tracking-wider{letter-spacing:0.05em}
-.leading-tight{line-height:1.25}
-.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.overflow-hidden{overflow:hidden}
-.overflow-y-auto{overflow-y:auto}
-.appearance-none{appearance:none;-webkit-appearance:none}
-.resize-none{resize:none}
-.outline-none{outline:2px solid transparent;outline-offset:2px}
-.transition{transition-property:color,background-color,border-color,text-decoration-color,fill,stroke,opacity,box-shadow,transform,filter,backdrop-filter;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
-.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(.4,0,.2,1);transition-duration:.15s}
-.duration-300{transition-duration:.3s}
-.transform{transform:translate(var(--tw-tx,0),var(--tw-ty,0)) rotate(0) skewX(0) skewY(0) scaleX(var(--tw-sx,1)) scaleY(var(--tw-sy,1))}
-.pointer-events-none{pointer-events:none}
-.border{border-width:1px}
-.border-2{border-width:2px}
-.border-4{border-width:4px}
-.border-t{border-top-width:1px}
-.border-x{border-left-width:1px;border-right-width:1px}
-.border-dashed{border-style:dashed}
-.backdrop-blur-sm{backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
-.opacity-0{opacity:0}
-.h-full{height:100%}
-.h-screen{height:100vh}
-.w-full{width:100%}
-.inset-0{top:0;right:0;bottom:0;left:0}
-.top-0{top:0}
-.bottom-0{bottom:0}
-.shrink-0{flex-shrink:0}
-.bg-gradient-to-tr{background-image:linear-gradient(to top right,var(--tw-gradient-stops))}
-.bg-gradient-to-r{background-image:linear-gradient(to right,var(--tw-gradient-stops))}
-.rounded{border-radius:.25rem}
-.rounded-lg{border-radius:.5rem}
-.rounded-xl{border-radius:.75rem}
-.rounded-2xl{border-radius:1rem}
-.rounded-3xl{border-radius:1.5rem}
-.rounded-full{border-radius:9999px}
-.rounded-t-3xl{border-top-left-radius:1.5rem;border-top-right-radius:1.5rem}
-.z-20{z-index:20}
-.z-30{z-index:30}
-.z-50{z-index:50}
-.z-\[60\]{z-index:60}
-.z-\[100\]{z-index:100}
-.w-8{width:2rem}
-.h-8{height:2rem}
-.w-10{width:2.5rem}
-.h-10{height:2.5rem}
-.w-12{width:3rem}
-.h-12{height:3rem}
-.w-16{width:4rem}
-.h-16{height:4rem}
-.w-1\/3{width:33.333333%}
-.max-w-sm{max-width:24rem}
-.max-w-md{max-width:28rem}
-.max-w-\[150px\]{max-width:150px}
-.max-h-32{max-height:8rem}
-.max-h-\[90vh\]{max-height:90vh}
-.p-0{padding:0px}
-.p-0\.5{padding:0.125rem}
-.p-1{padding:0.25rem}
-.p-1\.5{padding:0.375rem}
-.p-2{padding:0.5rem}
-.p-2\.5{padding:0.625rem}
-.p-3{padding:0.75rem}
-.p-3\.5{padding:0.875rem}
-.p-4{padding:1rem}
-.p-5{padding:1.25rem}
-.p-6{padding:1.5rem}
-.p-7{padding:1.75rem}
-.p-8{padding:2rem}
-.p-10{padding:2.5rem}
-.p-12{padding:3rem}
-.p-16{padding:4rem}
-.p-24{padding:6rem}
-.px-0{padding-left:0px;padding-right:0px}
-.px-0\.5{padding-left:0.125rem;padding-right:0.125rem}
-.px-1{padding-left:0.25rem;padding-right:0.25rem}
-.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}
-.px-2{padding-left:0.5rem;padding-right:0.5rem}
-.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}
-.px-3{padding-left:0.75rem;padding-right:0.75rem}
-.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}
-.px-4{padding-left:1rem;padding-right:1rem}
-.px-5{padding-left:1.25rem;padding-right:1.25rem}
-.px-6{padding-left:1.5rem;padding-right:1.5rem}
-.px-7{padding-left:1.75rem;padding-right:1.75rem}
-.px-8{padding-left:2rem;padding-right:2rem}
-.px-10{padding-left:2.5rem;padding-right:2.5rem}
-.px-12{padding-left:3rem;padding-right:3rem}
-.px-16{padding-left:4rem;padding-right:4rem}
-.px-24{padding-left:6rem;padding-right:6rem}
-.py-0{padding-top:0px;padding-bottom:0px}
-.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}
-.py-1{padding-top:0.25rem;padding-bottom:0.25rem}
-.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}
-.py-2{padding-top:0.5rem;padding-bottom:0.5rem}
-.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}
-.py-3{padding-top:0.75rem;padding-bottom:0.75rem}
-.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}
-.py-4{padding-top:1rem;padding-bottom:1rem}
-.py-5{padding-top:1.25rem;padding-bottom:1.25rem}
-.py-6{padding-top:1.5rem;padding-bottom:1.5rem}
-.py-7{padding-top:1.75rem;padding-bottom:1.75rem}
-.py-8{padding-top:2rem;padding-bottom:2rem}
-.py-10{padding-top:2.5rem;padding-bottom:2.5rem}
-.py-12{padding-top:3rem;padding-bottom:3rem}
-.py-16{padding-top:4rem;padding-bottom:4rem}
-.py-24{padding-top:6rem;padding-bottom:6rem}
-.pt-0{padding-top:0px}
-.pt-0\.5{padding-top:0.125rem}
-.pt-1{padding-top:0.25rem}
-.pt-1\.5{padding-top:0.375rem}
-.pt-2{padding-top:0.5rem}
-.pt-2\.5{padding-top:0.625rem}
-.pt-3{padding-top:0.75rem}
-.pt-3\.5{padding-top:0.875rem}
-.pt-4{padding-top:1rem}
-.pt-5{padding-top:1.25rem}
-.pt-6{padding-top:1.5rem}
-.pt-7{padding-top:1.75rem}
-.pt-8{padding-top:2rem}
-.pt-10{padding-top:2.5rem}
-.pt-12{padding-top:3rem}
-.pt-16{padding-top:4rem}
-.pt-24{padding-top:6rem}
-.pb-0{padding-bottom:0px}
-.pb-0\.5{padding-bottom:0.125rem}
-.pb-1{padding-bottom:0.25rem}
-.pb-1\.5{padding-bottom:0.375rem}
-.pb-2{padding-bottom:0.5rem}
-.pb-2\.5{padding-bottom:0.625rem}
-.pb-3{padding-bottom:0.75rem}
-.pb-3\.5{padding-bottom:0.875rem}
-.pb-4{padding-bottom:1rem}
-.pb-5{padding-bottom:1.25rem}
-.pb-6{padding-bottom:1.5rem}
-.pb-7{padding-bottom:1.75rem}
-.pb-8{padding-bottom:2rem}
-.pb-10{padding-bottom:2.5rem}
-.pb-12{padding-bottom:3rem}
-.pb-16{padding-bottom:4rem}
-.pb-24{padding-bottom:6rem}
-.pr-0{padding-right:0px}
-.pr-0\.5{padding-right:0.125rem}
-.pr-1{padding-right:0.25rem}
-.pr-1\.5{padding-right:0.375rem}
-.pr-2{padding-right:0.5rem}
-.pr-2\.5{padding-right:0.625rem}
-.pr-3{padding-right:0.75rem}
-.pr-3\.5{padding-right:0.875rem}
-.pr-4{padding-right:1rem}
-.pr-5{padding-right:1.25rem}
-.pr-6{padding-right:1.5rem}
-.pr-7{padding-right:1.75rem}
-.pr-8{padding-right:2rem}
-.pr-10{padding-right:2.5rem}
-.pr-12{padding-right:3rem}
-.pr-16{padding-right:4rem}
-.pr-24{padding-right:6rem}
-.mb-0{margin-bottom:0px}
-.mb-0\.5{margin-bottom:0.125rem}
-.mb-1{margin-bottom:0.25rem}
-.mb-1\.5{margin-bottom:0.375rem}
-.mb-2{margin-bottom:0.5rem}
-.mb-2\.5{margin-bottom:0.625rem}
-.mb-3{margin-bottom:0.75rem}
-.mb-3\.5{margin-bottom:0.875rem}
-.mb-4{margin-bottom:1rem}
-.mb-5{margin-bottom:1.25rem}
-.mb-6{margin-bottom:1.5rem}
-.mb-7{margin-bottom:1.75rem}
-.mb-8{margin-bottom:2rem}
-.mb-10{margin-bottom:2.5rem}
-.mb-12{margin-bottom:3rem}
-.mb-16{margin-bottom:4rem}
-.mb-24{margin-bottom:6rem}
-.mt-0{margin-top:0px}
-.mt-0\.5{margin-top:0.125rem}
-.mt-1{margin-top:0.25rem}
-.mt-1\.5{margin-top:0.375rem}
-.mt-2{margin-top:0.5rem}
-.mt-2\.5{margin-top:0.625rem}
-.mt-3{margin-top:0.75rem}
-.mt-3\.5{margin-top:0.875rem}
-.mt-4{margin-top:1rem}
-.mt-5{margin-top:1.25rem}
-.mt-6{margin-top:1.5rem}
-.mt-7{margin-top:1.75rem}
-.mt-8{margin-top:2rem}
-.mt-10{margin-top:2.5rem}
-.mt-12{margin-top:3rem}
-.mt-16{margin-top:4rem}
-.mt-24{margin-top:6rem}
-.ml-0{margin-left:0px}
-.ml-0\.5{margin-left:0.125rem}
-.ml-1{margin-left:0.25rem}
-.ml-1\.5{margin-left:0.375rem}
-.ml-2{margin-left:0.5rem}
-.ml-2\.5{margin-left:0.625rem}
-.ml-3{margin-left:0.75rem}
-.ml-3\.5{margin-left:0.875rem}
-.ml-4{margin-left:1rem}
-.ml-5{margin-left:1.25rem}
-.ml-6{margin-left:1.5rem}
-.ml-7{margin-left:1.75rem}
-.ml-8{margin-left:2rem}
-.ml-10{margin-left:2.5rem}
-.ml-12{margin-left:3rem}
-.ml-16{margin-left:4rem}
-.ml-24{margin-left:6rem}
-.mr-0{margin-right:0px}
-.mr-0\.5{margin-right:0.125rem}
-.mr-1{margin-right:0.25rem}
-.mr-1\.5{margin-right:0.375rem}
-.mr-2{margin-right:0.5rem}
-.mr-2\.5{margin-right:0.625rem}
-.mr-3{margin-right:0.75rem}
-.mr-3\.5{margin-right:0.875rem}
-.mr-4{margin-right:1rem}
-.mr-5{margin-right:1.25rem}
-.mr-6{margin-right:1.5rem}
-.mr-7{margin-right:1.75rem}
-.mr-8{margin-right:2rem}
-.mr-10{margin-right:2.5rem}
-.mr-12{margin-right:3rem}
-.mr-16{margin-right:4rem}
-.mr-24{margin-right:6rem}
-.gap-0{gap:0px}
-.gap-0\.5{gap:0.125rem}
-.gap-1{gap:0.25rem}
-.gap-1\.5{gap:0.375rem}
-.gap-2{gap:0.5rem}
-.gap-2\.5{gap:0.625rem}
-.gap-3{gap:0.75rem}
-.gap-3\.5{gap:0.875rem}
-.gap-4{gap:1rem}
-.gap-5{gap:1.25rem}
-.gap-6{gap:1.5rem}
-.gap-7{gap:1.75rem}
-.gap-8{gap:2rem}
-.gap-10{gap:2.5rem}
-.gap-12{gap:3rem}
-.gap-16{gap:4rem}
-.gap-24{gap:6rem}
-.-top-10{top:-2.5rem}
-.space-y-1\.5>:not([hidden])~:not([hidden]){margin-top:0.375rem}
-.space-y-2>:not([hidden])~:not([hidden]){margin-top:0.5rem}
-.space-y-2\.5>:not([hidden])~:not([hidden]){margin-top:0.625rem}
-.space-y-3>:not([hidden])~:not([hidden]){margin-top:0.75rem}
-.space-y-4>:not([hidden])~:not([hidden]){margin-top:1rem}
-.space-y-5>:not([hidden])~:not([hidden]){margin-top:1.25rem}
-.space-y-6>:not([hidden])~:not([hidden]){margin-top:1.5rem}
-.left-1\/2{left:50%}
-.-translate-x-1\/2{--tw-tx:-50%;transform:translate(var(--tw-tx,0),var(--tw-ty,0)) rotate(0) skewX(0) skewY(0) scaleX(var(--tw-sx,1)) scaleY(var(--tw-sy,1))}
-.top-2{top:.5rem}
-.right-2{right:.5rem}
-.top-5{top:1.25rem}
-.mt-7{margin-top:1.75rem}
-.text-xs{font-size:0.75rem;line-height:1rem}
-.text-sm{font-size:0.875rem;line-height:1.25rem}
-.text-lg{font-size:1.125rem;line-height:1.75rem}
-.text-xl{font-size:1.25rem;line-height:1.75rem}
-.text-2xl{font-size:1.5rem;line-height:2rem}
-.text-3xl{font-size:1.875rem;line-height:2.25rem}
-.text-\[10px\]{font-size:10px;line-height:1}
-.text-\[9px\]{font-size:9px;line-height:1}
-.text-white{color:#ffffff}
-.text-slate-300{color:#cbd5e1}
-.text-slate-400{color:#94a3b8}
-.text-slate-500{color:#64748b}
-.text-slate-600{color:#475569}
-.text-slate-900{color:#0f172a}
-.text-slate-950{color:#020617}
-.text-green-400{color:#4ade80}
-.text-green-500{color:#22c55e}
-.text-red-400{color:#f87171}
-.text-red-500{color:#ef4444}
-.text-blue-500{color:#3b82f6}
-.text-blue-400{color:#60a5fa}
-.border-blue-500\/40{border-color:rgba(59,130,246,.4)}
-.bg-black\/70{background-color:rgba(0,0,0,.7)}
-.max-h-\[80vh\]{max-height:80vh}
-.hover\:text-slate-400:hover{color:#94a3b8}
-.text-yellow-400{color:#facc15}
-.text-yellow-500{color:#eab308}
-.text-indigo-400{color:#818cf8}
-.text-teal-400{color:#2dd4bf}
-.w-1\/5{width:20%}
-.text-emerald-400{color:#34d399}
-.text-emerald-500{color:#10b981}
-.bg-emerald-600\/15{background-color:rgba(5,150,105,.15)}
-.bg-emerald-600\/20{background-color:rgba(5,150,105,.2)}
-.min-w-0{min-width:0}
-.h-7{height:1.75rem}
-.last\:border-b-0:last-child{border-bottom-width:0}
-.hover\:bg-red-400:hover{background-color:#f87171}
-.hover\:bg-red-500\/20:hover{background-color:rgba(239,68,68,.2)}
-.hover\:text-red-400:hover{color:#f87171}
-.text-\[\#25D366\]{color:#25D366}
-.bg-white{background-color:#ffffff}
-.bg-slate-800{background-color:#1e293b}
-.bg-slate-900{background-color:#0f172a}
-.bg-slate-950{background-color:#020617}
-.bg-green-500{background-color:#22c55e}
-.bg-emerald-600{background-color:#059669}
-.bg-blue-600{background-color:#2563eb}
-.bg-yellow-500{background-color:#eab308}
-.bg-\[\#25D366\]{background-color:#25D366}
-.bg-black\/60{background-color:rgba(0, 0, 0, 0.6)}
-.bg-black\/80{background-color:rgba(0, 0, 0, 0.8)}
-.bg-green-500\/10{background-color:rgba(34, 197, 94, 0.1)}
-.bg-green-500\/20{background-color:rgba(34, 197, 94, 0.2)}
-.bg-red-500\/10{background-color:rgba(239, 68, 68, 0.1)}
-.bg-red-500\/20{background-color:rgba(239, 68, 68, 0.2)}
-.bg-blue-500\/20{background-color:rgba(59, 130, 246, 0.2)}
-.bg-yellow-500\/20{background-color:rgba(234, 179, 8, 0.2)}
-.bg-indigo-500\/20{background-color:rgba(99, 102, 241, 0.2)}
-.bg-slate-900\/40{background-color:rgba(15, 23, 42, 0.4)}
-.bg-\[\#25D366\]\/20{background-color:rgba(37, 211, 102, 0.2)}
-.border-green-500{border-color:#22c55e}
-.border-red-500{border-color:#ef4444}
-.border-slate-700{border-color:#334155}
-.border-slate-800{border-color:#1e293b}
-.border-slate-900{border-color:#0f172a}
-.border-slate-950{border-color:#020617}
-.border-transparent{border-color:transparent}
-.border-red-500\/20{border-color:rgba(239, 68, 68, 0.2)}
-.border-indigo-500\/30{border-color:rgba(99, 102, 241, 0.3)}
-.from-green-400{--tw-gradient-from:#4ade80 var(--tw-gradient-from-position);--tw-gradient-to:rgba(74,222,128,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}
-.from-slate-900{--tw-gradient-from:#0f172a var(--tw-gradient-from-position);--tw-gradient-to:rgba(15,23,42,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}
-.to-emerald-600{--tw-gradient-to:#059669 var(--tw-gradient-to-position)}
-.to-slate-850{--tw-gradient-to:#172033 var(--tw-gradient-to-position)}
-.from-emerald-600\/20{--tw-gradient-from:rgba(5,150,105,.2) var(--tw-gradient-from-position);--tw-gradient-to:rgba(5,150,105,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to)}
-.to-green-500\/10{--tw-gradient-to:rgba(34,197,94,.1) var(--tw-gradient-to-position)}
-.border-emerald-600\/30{border-color:rgba(5,150,105,.3)}
-.text-emerald-300{color:#6ee7b7}
-.leading-relaxed{line-height:1.625}
-.shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -4px rgba(0,0,0,.1);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}
-.shadow-xl{--tw-shadow:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}
-.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}
-.shadow-\[0_-10px_40px_rgba\(0\,0\,0\,0\.5\)\]{--tw-shadow:0 -10px 40px rgba(0,0,0,0.5);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}
-.shadow-green-500\/20{--tw-shadow-color:rgba(34,197,94,.2);--tw-shadow:var(--tw-shadow,0 0 #0000)}
-.shadow-green-500\/30{--tw-shadow-color:rgba(34,197,94,.3);--tw-shadow:var(--tw-shadow,0 0 #0000)}
-.shadow-green-900\/50{--tw-shadow-color:rgba(20,83,45,.5);--tw-shadow:var(--tw-shadow,0 0 #0000)}
-.shadow-blue-600\/30{--tw-shadow-color:rgba(37,99,235,.3);--tw-shadow:var(--tw-shadow,0 0 #0000)}
-.hover\:bg-green-400:hover{background-color:#4ade80}
-.hover\:bg-slate-200:hover{background-color:#e2e8f0}
-.hover\:bg-blue-500:hover{background-color:#3b82f6}
-.hover\:bg-emerald-500:hover{background-color:#10b981}
-.hover\:bg-slate-700:hover{background-color:#334155}
-.hover\:bg-yellow-400:hover{background-color:#facc15}
-.hover\:bg-\[\#1ebd5a\]:hover{background-color:#1ebd5a}
-.hover\:text-white:hover{color:#ffffff}
-.hover\:text-green-400:hover{color:#4ade80}
-.hover\:text-red-500:hover{color:#ef4444}
-.hover\:text-yellow-400:hover{color:#facc15}
-.hover\:scale-105:hover{--tw-sx:1.05;--tw-sy:1.05;transform:translate(var(--tw-tx,0),var(--tw-ty,0)) rotate(0) skewX(0) skewY(0) scaleX(var(--tw-sx,1)) scaleY(var(--tw-sy,1))}
-.focus\:border-blue-500:focus{border-color:#3b82f6}
-.focus\:border-green-500:focus{border-color:#22c55e}
-.focus\:border-yellow-500:focus{border-color:#eab308}
-.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}
-@media (min-width:640px){
-  .sm\:items-center{align-items:center}
-  .sm\:rounded-3xl{border-radius:1.5rem}
-}
-    </style>
+    <!-- Tailwind CSS Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #020617; color: #f8fafc; -webkit-tap-highlight-color: transparent; }
-        ::-webkit-scrollbar { width: 0px; background: transparent; }
-        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
-        .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .modal { transition: opacity 0.3s ease, visibility 0.3s ease; opacity: 0; visibility: hidden; }
-        .modal.open { opacity: 1; visibility: visible; }
-        .modal-content { transition: transform 0.3s ease; transform: translateY(100%); }
-        .modal.open .modal-content { transform: translateY(0); }
+        body { 
+            background-color: #020617; 
+            color: #f8fafc; 
+            -webkit-tap-highlight-color: transparent; 
+        }
+        ::-webkit-scrollbar { 
+            width: 0px; 
+            background: transparent; 
+        }
+        .tab-content { 
+            display: none; 
+            animation: fadeIn 0.3s ease-in-out; 
+        }
+        .tab-content.active { 
+            display: block; 
+        }
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(8px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+        .modal { 
+            transition: opacity 0.3s ease, visibility 0.3s ease; 
+            opacity: 0; 
+            visibility: hidden; 
+        }
+        .modal.open { 
+            opacity: 1; 
+            visibility: visible; 
+        }
+        .modal-content { 
+            transition: transform 0.3s ease; 
+            transform: translateY(100%); 
+        }
+        .modal.open .modal-content { 
+            transform: translateY(0); 
+        }
+        @media (min-width: 640px) {
+            .modal-content {
+                transform: scale(0.95) translateY(10px);
+            }
+            .modal.open .modal-content {
+                transform: scale(1) translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="flex justify-center h-screen overflow-hidden">
@@ -458,7 +102,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
 
     <!-- CONTAINER PRINCIPAL DO APP -->
     <div class="w-full max-w-md bg-slate-950 h-full relative flex flex-col shadow-2xl border-x border-slate-900 hidden" id="app-container">
-
+        
         <!-- HEADER -->
         <header class="px-6 pt-8 pb-4 bg-slate-950 sticky top-0 z-20">
             <div class="flex justify-between items-center mb-4">
@@ -487,8 +131,8 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
         </header>
 
         <!-- ÁREA DE ROLAGEM PRINCIPAL -->
-        <main class="flex-1 overflow-y-auto px-6 pb-24" id="main-scroll">
-
+        <main class="flex-1 overflow-y-auto px-6 pb-28" id="main-scroll">
+            
             <!-- ABA: DASHBOARD -->
             <section id="tab-dashboard" class="tab-content active space-y-6">
                 <div class="grid grid-cols-2 gap-3">
@@ -538,7 +182,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                     </div>
                 </div>
 
-                <!-- TOTAL GERAL DE RECEBIMENTOS (já recebido + a receber) -->
+                <!-- TOTAL GERAL DE RECEBIMENTOS -->
                 <div class="bg-gradient-to-r from-emerald-600/20 to-green-500/10 border border-emerald-600/30 p-4 rounded-2xl">
                     <div class="flex items-center justify-between">
                         <div>
@@ -561,7 +205,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                             <i class="fa-solid fa-list-ul text-blue-500"></i> <span id="list-title">Próximos Vencimentos</span>
                         </h3>
                         <div class="flex items-center gap-2">
-                            <button onclick="toggleAllTransactions()" id="btn-toggle-list" class="text-[10px] bg-slate-800 text-slate-300 hover:text-white px-2 py-1 rounded font-bold transition">Ver Todos</button>
+                            <button onclick="toggleAllTransactions()" id="btn-toggle-list" class="text-[10px] bg-slate-800 text-slate-300 hover:text-white px-2.5 py-1 rounded-lg font-bold transition">Ver Todos</button>
                             <span class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-full font-bold" id="transactions-count">0 itens</span>
                         </div>
                     </div>
@@ -709,7 +353,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             </ul>
         </nav>
 
-        <!-- MODAL: EDIÇÃO -->
+        <!-- MODAL: EDIÇÃO DE TRANSAÇÃO -->
         <div id="modal-edit-transaction" class="modal fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm">
             <div class="modal-content bg-slate-900 w-full max-w-md rounded-t-3xl sm:rounded-3xl border border-slate-800 p-6 flex flex-col max-h-[90vh] overflow-y-auto">
                 <div class="flex justify-between items-center mb-5">
@@ -756,8 +400,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 <h3 class="text-xl font-black text-white mb-2">Liquidar Conta</h3>
                 <p class="text-sm text-slate-400 mb-6">Confirmar este pagamento? A transação vai para o histórico de liquidados (você poderá desfazer).</p>
                 <div class="flex w-full gap-3">
-                    <button onclick="closeModal('modal-confirm-pay')" class="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl transition">Cancelar</button>
-                    <button onclick="confirmPay()" class="flex-1 bg-green-500 hover:bg-green-400 text-slate-900 font-black py-3 rounded-xl transition shadow-lg shadow-green-500/20">Confirmar</button>
+                    <button onclick="closeModal('modal-confirm-pay')" class="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl transition">Cancelar</button>                    <button onclick="confirmPay()" class="flex-1 bg-green-500 hover:bg-green-400 text-slate-900 font-black py-3 rounded-xl transition shadow-lg shadow-green-500/20">Confirmar</button>
                 </div>
             </div>
         </div>
@@ -772,8 +415,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 <p class="text-sm text-slate-400 mb-4" id="settle-client-text">Liquidar todas as pendências deste cliente?</p>
                 <div class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 mb-5 text-left" id="settle-client-summary"></div>
                 <div class="flex w-full gap-3">
-                    <button onclick="closeModal('modal-settle-client')" class="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl transition">Cancelar</button>
-                    <button onclick="confirmSettleClient()" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-black py-3 rounded-xl transition shadow-lg shadow-green-500/20">Quitar Tudo</button>
+                    <button onclick="closeModal('modal-settle-client')" class="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl transition">Cancelar</button>                    <button onclick="confirmSettleClient()" class="flex-1 bg-emerald-600 hover:bg-emerald-500 text-white font-black py-3 rounded-xl transition shadow-lg shadow-green-500/20">Quitar Tudo</button>
                 </div>
             </div>
         </div>
@@ -787,8 +429,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 <h3 class="text-xl font-black text-white mb-2" id="del-hist-title">Excluir</h3>
                 <p class="text-sm text-slate-400 mb-6" id="del-hist-text"></p>
                 <div class="flex w-full gap-3">
-                    <button onclick="closeModal('modal-delete-history')" class="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl transition">Cancelar</button>
-                    <button onclick="confirmDeleteHistory()" class="flex-1 bg-red-500 hover:bg-red-400 text-white font-black py-3 rounded-xl transition shadow-lg">Excluir</button>
+                    <button onclick="closeModal('modal-delete-history')" class="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl transition">Cancelar</button>                    <button onclick="confirmDeleteHistory()" class="flex-1 bg-red-500 hover:bg-red-400 text-white font-black py-3 rounded-xl transition shadow-lg">Excluir</button>
                 </div>
             </div>
         </div>
@@ -803,8 +444,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 <p class="text-sm text-slate-400 mb-4">Isto vai <b class="text-red-400">apagar todos os dados atuais</b> na nuvem e substituí-los pelos do arquivo. Não pode ser desfeito.</p>
                 <div class="w-full bg-slate-950 border border-slate-800 rounded-xl p-3 mb-5" id="import-summary"></div>
                 <div class="flex w-full gap-3">
-                    <button onclick="closeModal('modal-confirm-import')" class="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl transition">Cancelar</button>
-                    <button onclick="confirmImport()" id="btn-confirm-import" class="flex-1 bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-black py-3 rounded-xl transition shadow-lg">Restaurar</button>
+                    <button onclick="closeModal('modal-confirm-import')" class="flex-1 bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 rounded-xl transition">Cancelar</button>                    <button onclick="confirmImport()" id="btn-confirm-import" class="flex-1 bg-yellow-500 hover:bg-yellow-400 text-slate-900 font-black py-3 rounded-xl transition shadow-lg">Restaurar</button>
                 </div>
             </div>
         </div>
@@ -869,6 +509,19 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                     </div>
 
                     <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2.5">
+                        <label class="block text-xs font-bold text-slate-400">Segurança da Sessão</label>
+                        <div>
+                            <label class="block text-[10px] text-slate-500 mb-1">Deslogar automaticamente após inatividade</label>
+                            <select id="config-inactivity" onchange="onInactivitySettingChange()" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2 text-white text-sm focus:border-blue-500 outline-none appearance-none">
+                                <option value="5">5 minutos</option>
+                                <option value="15">15 minutos</option>
+                                <option value="30">30 minutos</option>
+                                <option value="0">Nunca</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-950 p-4 rounded-2xl border border-slate-800 space-y-2.5">
                         <label class="block text-xs font-bold text-slate-400">Backup de Segurança</label>
                         <div class="grid grid-cols-2 gap-2">
                             <button onclick="exportBackup()" class="bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-2.5 px-3 rounded-xl flex items-center justify-center gap-1.5 transition">
@@ -879,7 +532,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                             </button>
                         </div>
                         <input type="file" id="import-file-input" accept=".json,application/json" class="hidden" onchange="importBackup(event)">
-                        <p class="text-[9px] text-slate-500 leading-tight">Seus dados ficam na nuvem (Supabase) e sincronizam entre dispositivos. "Baixar cópia" gera um arquivo .json de segurança; "Restaurar" repõe os dados a partir de um arquivo .json.</p>
+                        <p class="text-[9px] text-slate-500 leading-tight">Seus dados ficam na nuvem (Supabase) e sincronizam entre dispositivos. "Baixar cópia" gera um arquivo .json de segurança contendo dados financeiros sem criptografia — guarde em local seguro; "Restaurar" repõe os dados a partir de um arquivo .json.</p>
                     </div>
 
                     <button onclick="saveSettings()" class="w-full bg-white text-slate-900 font-black rounded-xl py-3.5 shadow-lg transition">Salvar Configurações</button>
@@ -905,7 +558,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
         <div id="modal-share" class="modal fixed inset-0 z-50 flex items-end sm:items-center justify-center bg-black/60 backdrop-blur-sm">
             <div class="modal-content bg-slate-900 w-full max-w-md rounded-t-3xl sm:rounded-3xl border border-slate-800 p-6 flex flex-col">
                 <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-lg font-black"><i class="fa-brands fa-whatsapp text-green-500 mr-2"></i>Cobrar via WhatsApp</h3>
+                    <h3 class="text-lg font-black"><i class="fa-brands fa-whatsapp text-green-500 mr-2"></i>Cobrar Cliente</h3>
                     <button onclick="closeModal('modal-share')" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition"><i class="fa-solid fa-xmark"></i></button>
                 </div>
                 <div class="space-y-4">
@@ -924,13 +577,34 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                             <i class="fa-solid fa-wand-magic-sparkles"></i> IA
                         </div>
                     </div>
-                    <button id="btn-send-whatsapp" class="w-full bg-[#25D366] hover:bg-[#1ebd5a] text-white font-black rounded-xl py-3.5 shadow-lg shadow-green-900/50 transition flex justify-center items-center gap-2">
-                        <i class="fa-brands fa-whatsapp text-xl"></i> Abrir WhatsApp
-                    </button>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button id="btn-copy-message" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 transition">
+                            <i class="fa-regular fa-copy text-sm"></i> Copiar Texto
+                        </button>
+                        <button id="btn-send-whatsapp" class="bg-[#25D366] hover:bg-[#1ebd5a] text-white text-xs font-black rounded-xl py-3.5 shadow-lg shadow-green-900/50 transition flex justify-center items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Abrir WhatsApp
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
 
+        <!-- MODAL: AVISO DE INATIVIDADE -->
+        <div id="modal-inactivity" class="modal fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm px-4">
+            <div class="modal-content bg-slate-900 w-full max-w-sm rounded-3xl border border-slate-800 p-6 flex flex-col items-center text-center shadow-2xl">
+                <div class="w-16 h-16 rounded-full bg-yellow-500/20 text-yellow-500 flex items-center justify-center text-3xl mb-4">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+                <h3 class="text-xl font-black text-white mb-2">Sessão Expirando</h3>
+                <p class="text-sm text-slate-400 mb-1">Por inatividade, você será desconectado em</p>
+                <p class="text-3xl font-black text-yellow-400 mb-6" id="inactivity-countdown">30s</p>
+                <button onclick="resetInactivityTimer(true)" class="w-full bg-white text-slate-900 font-black rounded-xl py-3.5 shadow-lg transition">
+                    Continuar Conectado
+                </button>
+            </div>
+        </div>
+
+        <!-- TOAST -->
         <div id="toast" class="fixed top-5 left-1/2 transform -translate-x-1/2 bg-slate-800 text-white px-6 py-3 rounded-full shadow-2xl border border-slate-700 font-semibold text-sm opacity-0 pointer-events-none transition-opacity duration-300 z-[100]">
             Mensagem
         </div>
@@ -939,9 +613,11 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
     <!-- SCRIPT PRINCIPAL -->
     <script>
         // ===== VERSÃO DO APP =====
-        const APP_VERSION = 'v2.0';
-        // Histórico de versões (mais recente primeiro)
+        const APP_VERSION = 'v2.2';
+        // Histórico de versões
         const APP_CHANGELOG = [
+            { v: 'v2.2', notes: 'Correção crítica de transbordamento de data no cálculo de parcelas, injeção robusta de user_id do Supabase, substituição para Tailwind Play CDN e botão de copiar mensagem de cobrança.' },
+            { v: 'v2.1', notes: 'Auto-logout configurável por inatividade (5/15/30 min ou nunca), com aviso de 30s antes de encerrar a sessão.' },
             { v: 'v2.0', notes: 'Dados na nuvem (Supabase) com login por e-mail; edição de clientes; histórico por cliente; restaurar backup; total de recebimentos; número de versão.' },
             { v: 'v1.0', notes: 'Versão inicial: lançamentos, parcelas, clientes, liquidação, cobrança por WhatsApp.' }
         ];
@@ -982,8 +658,13 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             return `${prefix}_${Date.now()}_${idCounter}_${Math.random().toString(36).slice(2, 8)}`;
         }
 
+        // Recupera o ID do usuário conectado
+        async function getUserId() {
+            const { data } = await sb.auth.getSession();
+            return data?.session?.user?.id || null;
+        }
+
         // ===== MAPEAMENTO DB <-> LOCAL =====
-        // Linha do banco -> objeto local de transação
         function rowToTxn(r) {
             return {
                 id: r.id,
@@ -1013,7 +694,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
 
             if (cRes.error) throw cRes.error;
             if (tRes.error) throw tRes.error;
-            // settings pode não existir ainda (maybeSingle retorna null sem erro)
 
             state.clients = (cRes.data || []).map(rowToClient);
 
@@ -1034,17 +714,13 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
 
         // INICIALIZAÇÃO
         async function initApp() {
-            // Mostra a versão nas duas telas e monta o histórico
             applyVersionInfo();
-            // Restaura sessão Supabase, se houver
             const { data } = await sb.auth.getSession();
             if (data && data.session) {
                 await enterApp();
             }
-            // senão, permanece na tela de login
         }
 
-        // Preenche os rótulos de versão e o modal de changelog
         function applyVersionInfo() {
             const lv = document.getElementById('login-version');
             const sv = document.getElementById('settings-version');
@@ -1065,7 +741,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             }
         }
 
-        // Após autenticar: carrega dados e mostra o app
         async function enterApp() {
             try {
                 await loadAllData();
@@ -1087,10 +762,10 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             renderHistory();
             populateClientSelects();
             document.getElementById('debt-date').valueAsDate = new Date();
-        }
 
-        // saveData mantida como no-op de compatibilidade (persistência agora é por operação no Supabase)
-        function saveData() { /* dados persistem diretamente no Supabase */ }
+            loadInactivitySetting();
+            resetInactivityTimer(false);
+        }
 
         // LOGIN via Supabase Auth
         async function login() {
@@ -1125,6 +800,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
         }
 
         async function logout() {
+            stopInactivityTimer();
             await sb.auth.signOut();
             location.reload();
         }
@@ -1136,12 +812,11 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             const pixBank = document.getElementById('config-pix-bank').value.trim();
             const newPass = document.getElementById('config-pass').value;
 
-            // Grava Pix na tabela settings (upsert por user_id)
-            const sess = (await sb.auth.getSession()).data.session;
-            if (!sess) { showToast('Sessão expirada. Faça login.'); return; }
+            const uid = await getUserId();
+            if (!uid) { showToast('Sessão expirada. Faça login.'); return; }
 
             const { error } = await sb.from('settings').upsert({
-                user_id: sess.user.id,
+                user_id: uid,
                 pix, pix_name: pixName, pix_bank: pixBank,
                 updated_at: new Date().toISOString()
             }, { onConflict: 'user_id' });
@@ -1152,7 +827,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             state.settings.pixName = pixName;
             state.settings.pixBank = pixBank;
 
-            // Troca de senha (opcional) via Supabase Auth
             if (newPass.trim() !== '') {
                 if (newPass.length < 6) { showToast('Senha deve ter ao menos 6 caracteres.'); return; }
                 const { error: pErr } = await sb.auth.updateUser({ password: newPass });
@@ -1168,7 +842,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
         // BACKUP JSON
         function exportBackup() {
             try {
-                // FIX #4: NÃO exporta credenciais (user/pass)
                 const exportData = {
                     transactions: state.transactions,
                     history: state.history,
@@ -1204,7 +877,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
 
         let pendingImportData = null;
 
-        // Lê o arquivo, valida e abre confirmação (não grava ainda)
         function importBackup(event) {
             const file = event.target.files[0];
             if (!file) return;
@@ -1224,7 +896,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
 
                     pendingImportData = { imported, clients, txns, hist };
 
-                    // Resumo na confirmação
                     document.getElementById('import-summary').innerHTML =
                         `<div class="text-left text-xs space-y-1">
                             <div class="flex justify-between"><span class="text-slate-400">Clientes no arquivo:</span><span class="text-white font-bold">${clients.length}</span></div>
@@ -1243,7 +914,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             reader.readAsText(file);
         }
 
-        // Aplica a importação: SUBSTITUI tudo na nuvem pelos dados do arquivo
         async function confirmImport() {
             if (!pendingImportData) return;
             const { imported, clients, txns, hist } = pendingImportData;
@@ -1253,26 +923,29 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             btn.textContent = 'Restaurando...';
 
             try {
-                const sess = (await sb.auth.getSession()).data.session;
-                if (!sess) { showToast('Sessão expirada. Faça login.'); return; }
-                const uid = sess.user.id;
+                const uid = await getUserId();
+                if (!uid) { showToast('Sessão expirada. Faça login.'); return; }
 
-                // 1) Apaga tudo do usuário (transações primeiro por causa da FK)
+                // 1) Apaga tudo do usuário
                 let del = await sb.from('transactions').delete().eq('user_id', uid);
                 if (del.error) throw del.error;
                 del = await sb.from('clients').delete().eq('user_id', uid);
                 if (del.error) throw del.error;
 
-                // 2) Reinsere clientes, guardando o mapa ID_antigo -> ID_novo
+                // 2) Reinsere clientes de forma sequencial para garantir mapeamento correto
                 const idMap = {};
                 if (clients.length > 0) {
-                    const clientRows = clients.map(c => ({
-                        name: c.name, email: c.email || null, phone: c.phone || null
-                    }));
-                    const { data: insClients, error: cErr } = await sb.from('clients').insert(clientRows).select();
-                    if (cErr) throw cErr;
-                    // Casa pela ordem (insert preserva a ordem enviada)
-                    clients.forEach((c, i) => { idMap[c.id] = insClients[i].id; });
+                    for (const c of clients) {
+                        const { data: insClient, error: cErr } = await sb.from('clients').insert({
+                            user_id: uid,
+                            name: c.name,
+                            email: c.email || null,
+                            phone: c.phone || null
+                        }).select().single();
+                        
+                        if (cErr) throw cErr;
+                        idMap[c.id] = insClient.id;
+                    }
                 }
 
                 // 3) Reinsere transações (ativas + histórico), remapeando client_id
@@ -1282,6 +955,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 ];
                 if (allTxns.length > 0) {
                     const txnRows = allTxns.map(t => ({
+                        user_id: uid,
                         client_id: idMap[t.friendId] || null,
                         type: t.type === 'pay' ? 'pay' : 'receive',
                         value: Number(t.value) || 0,
@@ -1289,7 +963,8 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                         description: t.description || null,
                         paid: !!t._paid,
                         paid_at: t._paid ? (t.liquidatedAt || new Date().toISOString()) : null
-                    })).filter(r => r.client_id); // ignora órfãs sem cliente
+                    })).filter(r => r.client_id); 
+                    
                     if (txnRows.length > 0) {
                         const { error: tErr } = await sb.from('transactions').insert(txnRows);
                         if (tErr) throw tErr;
@@ -1306,7 +981,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                     }, { onConflict: 'user_id' });
                 }
 
-                // 5) Recarrega tudo da nuvem e atualiza a tela
                 await loadAllData();
                 document.getElementById('config-pix').value = state.settings.pix || '';
                 document.getElementById('config-pix-name').value = state.settings.pixName || '';
@@ -1320,7 +994,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 showToast('Backup restaurado com sucesso!');
             } catch (err) {
                 console.error(err);
-                showToast('Erro ao restaurar. Nada foi perdido se falhou no meio? Verifique.');
+                showToast('Erro ao restaurar o backup.');
             } finally {
                 btn.disabled = false;
                 btn.textContent = original;
@@ -1328,7 +1002,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             }
         }
 
-        // UI
+        // UI TOAST
         function showToast(msg) {
             const toast = document.getElementById('toast');
             toast.textContent = msg;
@@ -1419,7 +1093,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 alertBox.classList.add('hidden');
             }
 
-            // Totais já liquidados (do histórico)
             let received = 0, receivedCount = 0, paid = 0, paidCount = 0;
             state.history.forEach(h => {
                 if (h.type === 'receive') { received += h.value; receivedCount++; }
@@ -1430,7 +1103,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             document.getElementById('balance-paid').textContent = formatBRL(paid);
             document.getElementById('balance-paid-count').textContent = `${paidCount} liquidado(s)`;
 
-            // Total geral de recebimentos = já recebido + ainda a receber
             const totalReceivables = received + totalReceive;
             document.getElementById('balance-total-receivables').textContent = formatBRL(totalReceivables);
             document.getElementById('ttr-received').textContent = formatBRL(received);
@@ -1485,11 +1157,11 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                     const tDate = new Date(y, m - 1, d, 0, 0, 0, 0);
                     const diffDays = Math.round((tDate.getTime() - todayLocal.getTime()) / 86400000);
                     if (diffDays < 0) {
-                        dateBadge = `<span class="text-[10px] bg-red-500/20 text-red-400 px-2 py-0.5 rounded-full font-bold">Vencido (${Math.abs(diffDays)}d)</span>`;
+                        dateBadge = `<span class="text-[10px] bg-red-500/20 text-red-400 px-2.5 py-0.5 rounded-full font-bold">Vencido (${Math.abs(diffDays)}d)</span>`;
                     } else if (diffDays === 0) {
-                        dateBadge = `<span class="text-[10px] bg-yellow-500/20 text-yellow-400 px-2 py-0.5 rounded-full font-bold">Vence Hoje</span>`;
+                        dateBadge = `<span class="text-[10px] bg-yellow-500/20 text-yellow-400 px-2.5 py-0.5 rounded-full font-bold">Vence Hoje</span>`;
                     } else {
-                        dateBadge = `<span class="text-[10px] bg-slate-800 text-slate-400 px-2 py-0.5 rounded-full font-bold">Vence em ${diffDays}d</span>`;
+                        dateBadge = `<span class="text-[10px] bg-slate-800 text-slate-400 px-2.5 py-0.5 rounded-full font-bold">Vence em ${diffDays}d</span>`;
                     }
                 }
 
@@ -1516,7 +1188,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                         <div class="flex gap-2">
                             <button onclick="editTransaction('${t.id}')" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-yellow-400 transition flex items-center justify-center text-xs"><i class="fa-solid fa-pen"></i></button>
                             <button onclick="promptConfirmPay('${t.id}')" class="w-8 h-8 rounded-lg bg-slate-800 text-slate-400 hover:text-green-400 transition flex items-center justify-center text-xs"><i class="fa-solid fa-check"></i></button>
-                            ${isReceive ? `<button onclick="openShareModal('${t.id}')" class="px-3 h-8 rounded-lg bg-[#25D366]/20 text-[#25D366] font-bold text-[10px] transition flex items-center gap-1"><i class="fa-brands fa-whatsapp text-sm"></i> Cobrar</button>` : ''}
+                            ${isReceive ? `<button onclick="openShareModal('${t.id}')" class="px-3 h-8 rounded-lg bg-emerald-500/15 text-emerald-400 font-bold text-[10px] transition flex items-center gap-1 hover:bg-emerald-500/30"><i class="fa-brands fa-whatsapp text-sm"></i> Cobrar</button>` : ''}
                         </div>
                     </div>`;
                 listContainer.appendChild(el);
@@ -1564,7 +1236,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             pendingLiquidationId = null;
         }
 
-        // Reverte uma liquidação: paid=false
         async function undoLiquidation(historyId) {
             const idx = state.history.findIndex(h => h.id === historyId);
             if (idx === -1) return;
@@ -1584,8 +1255,8 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             showToast('Liquidação desfeita — voltou para a lista.');
         }
 
-        // ===== EXCLUSÃO PERMANENTE DO HISTÓRICO =====
-        let pendingDeleteHistory = null; // { mode:'item'|'client', id }
+        // EXCLUSÃO PERMANENTE DO HISTÓRICO
+        let pendingDeleteHistory = null;
 
         function promptDeleteHistoryItem(historyId) {
             const h = state.history.find(x => x.id === historyId);
@@ -1622,7 +1293,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 state.history = state.history.filter(h => h.id !== id);
                 removed = before - state.history.length;
             } else {
-                // Exclui todos os pagamentos (paid=true) do cliente
                 const ids = state.history
                     .filter(h => (h.friendId || '__none__') === id)
                     .map(h => h.id);
@@ -1642,7 +1312,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             pendingDeleteHistory = null;
         }
 
-        // Abre confirmação para quitar TODAS as pendências (a receber + a pagar) do cliente
         function promptSettleClient(clientId) {
             const pend = state.transactions.filter(t => t.friendId === clientId);
             if (pend.length === 0) { showToast('Este cliente não tem pendências.'); return; }
@@ -1684,7 +1353,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             const toSettle = state.transactions.filter(t => t.friendId === id);
             if (toSettle.length === 0) { closeModal('modal-settle-client'); pendingSettleClientId = null; return; }
 
-            // Marca como pagas no banco todas as não pagas do cliente
             const { error } = await sb.from('transactions')
                 .update({ paid: true, paid_at: now })
                 .eq('client_id', id)
@@ -1702,7 +1370,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             pendingSettleClientId = null;
         }
 
-        // Renderiza o histórico de liquidados + totais
         function renderHistory() {
             const list = document.getElementById('history-list');
             if (!list) return;
@@ -1727,7 +1394,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 return;
             }
 
-            // Agrupa por cliente (friendId)
             const groups = {};
             state.history.forEach(h => {
                 const key = h.friendId || '__none__';
@@ -1735,7 +1401,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 groups[key].push(h);
             });
 
-            // Ordena clientes por nome
             const groupKeys = Object.keys(groups).sort((a, b) => {
                 const na = state.clients.find(c => c.id === a)?.name || 'Desconhecido';
                 const nb = state.clients.find(c => c.id === b)?.name || 'Desconhecido';
@@ -1749,7 +1414,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 let gReceived = 0, gPaid = 0;
                 items.forEach(h => { if (h.type === 'receive') gReceived += h.value; else gPaid += h.value; });
 
-                // Cabeçalho do grupo (cliente)
                 const groupEl = document.createElement('div');
                 groupEl.className = 'bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden';
 
@@ -1759,19 +1423,18 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
 
                 let header = `
                     <div class="flex justify-between items-center p-3 bg-slate-950 border-b border-slate-800">
-                        <div class="flex items-center gap-2">
+                        <div class="flex items-center gap-2 min-w-0">
                             <div class="w-8 h-8 rounded-full bg-blue-500/20 text-blue-500 flex items-center justify-center font-black text-sm shrink-0">${clientName.charAt(0).toUpperCase()}</div>
-                            <div>
-                                <h4 class="font-bold text-sm text-white">${clientName}</h4>
+                            <div class="min-w-0">
+                                <h4 class="font-bold text-sm text-white truncate max-w-[150px]">${clientName}</h4>
                                 <div class="flex gap-1.5 text-[10px] flex-wrap">${summaryParts.join('<span class="text-slate-600">•</span>')}</div>
                             </div>
                         </div>
                         <button onclick="promptDeleteHistoryClient('${key}')" class="px-2.5 h-8 rounded-lg bg-red-500/10 text-red-400 hover:bg-red-500/20 font-bold text-[10px] transition flex items-center gap-1 shrink-0">
-                            <i class="fa-solid fa-trash"></i> Excluir todos (${items.length})
+                            <i class="fa-solid fa-trash"></i> Limpar Histórico (${items.length})
                         </button>
                     </div>`;
 
-                // Itens do cliente (mais recentes primeiro)
                 const sortedItems = [...items].sort((a, b) =>
                     new Date(b.liquidatedAt || 0).getTime() - new Date(a.liquidatedAt || 0).getTime());
 
@@ -1830,13 +1493,12 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 const phone = escapeHtml(c.phone);
                 const email = escapeHtml(c.email);
 
-                // Pendências ativas do cliente
                 const pend = state.transactions.filter(t => t.friendId === c.id);
                 let pReceive = 0, pPay = 0;
                 pend.forEach(t => { if (t.type === 'receive') pReceive += t.value; else pPay += t.value; });
 
                 const el = document.createElement('div');
-                el.className = 'bg-slate-950 p-3 rounded-xl border border-slate-800';
+                el.className = 'bg-slate-900 p-4 rounded-2xl border border-slate-800';
 
                 let contactInfo = '';
                 if (c.email || c.phone) {
@@ -1846,7 +1508,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                     contactInfo += `</div>`;
                 }
 
-                // Resumo das pendências
                 let pendInfo = '';
                 if (pend.length > 0) {
                     const parts = [];
@@ -1855,9 +1516,8 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                     pendInfo = `<div class="flex gap-2 text-[10px] mt-1 flex-wrap">${parts.join('<span class="text-slate-600">•</span>')}</div>`;
                 }
 
-                // Botão "Quitar tudo" só se houver pendências
                 const quitarBtn = pend.length > 0
-                    ? `<button onclick="promptSettleClient('${c.id}')" class="px-3 h-8 rounded-lg bg-emerald-600/20 text-emerald-400 font-bold text-[10px] transition flex items-center gap-1 hover:bg-emerald-500">
+                    ? `<button onclick="promptSettleClient('${c.id}')" class="px-3 py-1.5 rounded-lg bg-emerald-600/20 text-emerald-400 font-bold text-[10px] transition flex items-center gap-1 hover:bg-emerald-500 hover:text-white">
                            <i class="fa-solid fa-circle-check"></i> Quitar tudo (${pend.length})
                        </button>`
                     : '';
@@ -1873,11 +1533,11 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                             </div>
                         </div>
                         <div class="flex items-center shrink-0">
-                            <button onclick="editClient('${c.id}')" class="text-slate-500 hover:text-yellow-400 p-2"><i class="fa-solid fa-pen"></i></button>
-                            <button onclick="deleteClient('${c.id}')" class="text-slate-500 hover:text-red-500 p-2"><i class="fa-solid fa-trash"></i></button>
+                            <button onclick="editClient('${c.id}')" class="text-slate-500 hover:text-yellow-400 p-2 transition"><i class="fa-solid fa-pen"></i></button>
+                            <button onclick="deleteClient('${c.id}')" class="text-slate-500 hover:text-red-500 p-2 transition"><i class="fa-solid fa-trash"></i></button>
                         </div>
                     </div>
-                    ${quitarBtn ? `<div class="flex justify-end mt-2 pt-2 border-t border-slate-800">${quitarBtn}</div>` : ''}`;
+                    ${quitarBtn ? `<div class="flex justify-end mt-3 pt-3 border-t border-slate-800">${quitarBtn}</div>` : ''}`;
                 list.appendChild(el);
             });
         }
@@ -1896,8 +1556,11 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 return;
             }
 
+            const uid = await getUserId();
+            if (!uid) { showToast('Sessão expirada. Faça login novamente.'); return; }
+
             const { data, error } = await sb.from('clients')
-                .insert({ name, email: email || null, phone: phone || null })
+                .insert({ user_id: uid, name, email: email || null, phone: phone || null })
                 .select().single();
 
             if (error) { console.error(error); showToast('Erro ao adicionar cliente.'); return; }
@@ -1931,7 +1594,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             populateClientSelects();
         }
 
-        // Abre o modal de edição preenchido
         function editClient(id) {
             const c = state.clients.find(x => x.id === id);
             if (!c) return;
@@ -1996,6 +1658,18 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             }
         }
 
+        // Função robusta de ajuste de data (evita pular meses caso o dia estoure na quantidade máxima do mês destino)
+        function calculateInstallmentDate(startDate, monthOffset) {
+            const d = new Date(startDate);
+            const targetMonth = d.getMonth() + monthOffset;
+            d.setMonth(targetMonth);
+            // Corrige se pulou um mês por conta de overflow de dias (ex: 31 de jan + 1 mês indo para março)
+            if (d.getMonth() !== (targetMonth % 12 + 12) % 12) {
+                d.setDate(0); 
+            }
+            return d;
+        }
+
         function generateInstallmentsPreview() {
             const totalValue = parseFloat(document.getElementById('debt-value').value) || 0;
             let numInstallments = parseInt(document.getElementById('debt-installments').value) || 1;
@@ -2018,8 +1692,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             const firstDate = new Date(dateStr + "T12:00:00");
 
             for (let i = 1; i <= displayLimit; i++) {
-                const currentDueDate = new Date(firstDate);
-                currentDueDate.setMonth(firstDate.getMonth() + (i - 1));
+                const currentDueDate = calculateInstallmentDate(firstDate, i - 1);
                 const item = document.createElement('div');
                 item.className = 'flex justify-between items-center text-xs bg-slate-900 border border-slate-800 p-2 rounded-lg';
                 item.innerHTML = `
@@ -2048,17 +1721,18 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 return;
             }
 
+            const uid = await getUserId();
+            if (!uid) { showToast('Sessão expirada. Faça login novamente.'); return; }
+
             const firstDate = new Date(dateStr + "T12:00:00");
             const installmentValue = parseFloat((valueTotal / numInstallments).toFixed(2));
             const groupId = numInstallments > 1 ? (crypto.randomUUID ? crypto.randomUUID() : makeId('grp')) : null;
 
             if (numInstallments > 30) showToast("Gerando parcelas, aguarde...");
 
-            // Monta o lote de linhas para inserir
             const rows = [];
             for (let i = 1; i <= numInstallments; i++) {
-                const currentDueDate = new Date(firstDate);
-                currentDueDate.setMonth(firstDate.getMonth() + (i - 1));
+                const currentDueDate = calculateInstallmentDate(firstDate, i - 1);
                 const padMonth = String(currentDueDate.getMonth() + 1).padStart(2, '0');
                 const padDay = String(currentDueDate.getDate()).padStart(2, '0');
                 const formattedDate = `${currentDueDate.getFullYear()}-${padMonth}-${padDay}`;
@@ -2067,6 +1741,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 if (numInstallments > 1) finalDesc = `${desc ? desc + ' ' : ''}(${i}/${numInstallments})`;
 
                 rows.push({
+                    user_id: uid,
                     client_id: friendId,
                     type: state.currentDebtType,
                     value: installmentValue,
@@ -2111,7 +1786,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
         function editTransaction(id) {
             const txn = state.transactions.find(t => t.id === id);
             if (!txn) return;
-            populateClientSelects(); // FIX #2: garante que o select de edição esteja populado
+            populateClientSelects(); 
             document.getElementById('edit-transaction-id').value = txn.id;
             document.getElementById('edit-friend-select').value = txn.friendId;
             document.getElementById('edit-debt-value').value = txn.value;
@@ -2156,7 +1831,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             showToast('Dívida atualizada com sucesso!');
         }
 
-        // WHATSAPP
+        // WHATSAPP & IA COBRANÇA
         const messagesDB = {
             friendly: [
                 "Oii {nome}, tudo bem? Passando só pra te lembrar daquele acerto de {valor} sobre {desc}. Quando puder dar uma olhada, me avisa! Segue meu Pix: {pix}. Abraço!"
@@ -2177,7 +1852,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
 
         function openShareModal(transactionId) {
             const t = state.transactions.find(x => x.id === transactionId);
-            if (!t) { showToast('Transação não encontrada.'); return; } // FIX #6
+            if (!t) { showToast('Transação não encontrada.'); return; } 
             const client = state.clients.find(c => c.id === t.friendId);
             currentShareData = {
                 nome: client ? client.name.split(' ')[0] : 'Amigo',
@@ -2186,7 +1861,7 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
                 pix: state.settings.pix || '(Sua Chave Pix Aqui)',
                 pixName: state.settings.pixName || '',
                 pixBank: state.settings.pixBank || '',
-                phone: client ? (client.phone || '') : '' // FIX #7
+                phone: client ? (client.phone || '') : '' 
             };
             document.getElementById('share-tone').value = 'funny';
             generateMessagePreview();
@@ -2199,7 +1874,6 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             const options = messagesDB[tone];
             const randomMsg = options[Math.floor(Math.random() * options.length)];
 
-            // FIX #3: replace global (todas as ocorrências de cada variável)
             let finalMsg = randomMsg
                 .replace(/\{nome\}/g, currentShareData.nome)
                 .replace(/\{valor\}/g, currentShareData.valor)
@@ -2215,17 +1889,37 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             document.getElementById('share-preview').value = finalMsg;
         }
 
+        // Botão para Copiar a mensagem com fallback seguro de iframe
+        document.getElementById('btn-copy-message').addEventListener('click', () => {
+            const textToCopy = document.getElementById('share-preview').value;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = textToCopy;
+            tempTextArea.style.position = 'fixed';
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showToast('Mensagem copiada com sucesso!');
+                } else {
+                    showToast('Erro ao copiar a mensagem.');
+                }
+            } catch (err) {
+                showToast('Erro ao copiar a mensagem.');
+            }
+            document.body.removeChild(tempTextArea);
+        });
+
         document.getElementById('btn-send-whatsapp').addEventListener('click', () => {
             const msg = encodeURIComponent(document.getElementById('share-preview').value);
-            // FIX #7: envia direto ao número do cliente, se houver
             let phone = currentShareData && currentShareData.phone ? currentShareData.phone.replace(/\D/g, '') : '';
-            if (phone && phone.length >= 10 && !phone.startsWith('55')) phone = '55' + phone; // assume Brasil
+            if (phone && phone.length >= 10 && !phone.startsWith('55')) phone = '55' + phone; 
             const url = phone ? `https://wa.me/${phone}?text=${msg}` : `https://wa.me/?text=${msg}`;
             window.open(url, '_blank');
             closeModal('modal-share');
         });
 
-        // Permite logar com Enter em qualquer campo do login
+        // Login com Enter
         ['login-user', 'login-pass'].forEach(fieldId => {
             const el = document.getElementById(fieldId);
             if (el) el.addEventListener('keydown', (e) => {
@@ -2233,7 +1927,83 @@ input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}
             });
         });
 
-        // INÍCIO
+        // ===== AUTO-LOGOUT POR INATIVIDADE =====
+        const INACTIVITY_STORAGE_KEY = 'medeve_inactivity_minutes';
+        let inactivityLimitMinutes = 5; 
+        let inactivityTimer = null;
+        let warningTimer = null;
+        let countdownInterval = null;
+        const WARNING_BEFORE_MS = 30 * 1000; 
+
+        function loadInactivitySetting() {
+            const saved = localStorage.getItem(INACTIVITY_STORAGE_KEY);
+            inactivityLimitMinutes = saved !== null ? parseInt(saved, 10) : 5;
+            const sel = document.getElementById('config-inactivity');
+            if (sel) sel.value = String(inactivityLimitMinutes);
+        }
+
+        function onInactivitySettingChange() {
+            const sel = document.getElementById('config-inactivity');
+            inactivityLimitMinutes = parseInt(sel.value, 10);
+            localStorage.setItem(INACTIVITY_STORAGE_KEY, String(inactivityLimitMinutes));
+            resetInactivityTimer(false);
+            showToast(inactivityLimitMinutes === 0
+                ? 'Auto-logout desativado.'
+                : `Auto-logout definido para ${inactivityLimitMinutes} min.`);
+        }
+
+        function stopInactivityTimer() {
+            clearTimeout(inactivityTimer);
+            clearTimeout(warningTimer);
+            clearInterval(countdownInterval);
+        }
+
+        function resetInactivityTimer(userDismissed) {
+            if (document.getElementById('app-container').classList.contains('hidden')) return;
+
+            stopInactivityTimer();
+
+            const warningModal = document.getElementById('modal-inactivity');
+            if (warningModal && warningModal.classList.contains('open')) {
+                closeModal('modal-inactivity');
+                if (userDismissed) showToast('Sessão renovada!');
+            }
+
+            if (!inactivityLimitMinutes || inactivityLimitMinutes <= 0) return;
+
+            const limitMs = inactivityLimitMinutes * 60 * 1000;
+            const warnAt = Math.max(limitMs - WARNING_BEFORE_MS, 0);
+
+            warningTimer = setTimeout(showInactivityWarning, warnAt);
+            inactivityTimer = setTimeout(autoLogout, limitMs);
+        }
+
+        function showInactivityWarning() {
+            openModal('modal-inactivity');
+            let secondsLeft = Math.round(WARNING_BEFORE_MS / 1000);
+            const countdownEl = document.getElementById('inactivity-countdown');
+            countdownEl.textContent = secondsLeft + 's';
+
+            countdownInterval = setInterval(() => {
+                secondsLeft--;
+                countdownEl.textContent = Math.max(secondsLeft, 0) + 's';
+                if (secondsLeft <= 0) clearInterval(countdownInterval);
+            }, 1000);
+        }
+
+        async function autoLogout() {
+            stopInactivityTimer();
+            closeModal('modal-inactivity');
+            await sb.auth.signOut();
+            showToast('Sessão encerrada por inatividade.');
+            setTimeout(() => location.reload(), 1200);
+        }
+
+        // Listener de atividades para reiniciar o timer
+        ['mousedown', 'mousemove', 'keydown', 'touchstart', 'scroll', 'click'].forEach(evt => {
+            document.addEventListener(evt, () => resetInactivityTimer(false), { passive: true });
+        });
+
         window.onload = () => { initApp().catch(err => { console.error(err); }); };
     </script>
 </body>
